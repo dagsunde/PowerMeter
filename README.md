@@ -27,3 +27,6 @@ I have hardcoded my Grid Cost inside the HomeController:
             return View(model);
         }
 ```
+
+The realtime feed subscription is started in Program.cs, and just serialie the data to disk,
+where the homecontroller picks them up.
