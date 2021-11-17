@@ -12,3 +12,18 @@ and put it into appsettings.json
 
 }
 ```
+
+I have hardcoded my Net-Tarrif inside the HomeController:
+```c#
+        public IActionResult Index()
+        {
+
+            string fileName = "PowerReading.json";
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            PowerModel model = JsonSerializer.Deserialize<PowerModel>(jsonString);
+
+            <b>var gridCost = model.consumption * 0.385M;</b>
+            model.cost += gridCost;
+            return View(model);
+        }
+```
