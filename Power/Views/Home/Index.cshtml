@@ -1,0 +1,25 @@
+﻿@model Power.Models.PowerModel
+
+<style type="text/css">
+    h1 {
+        font-size: 172px !important;
+        margin-top: 1em;
+    }
+
+    h2 {
+        font-size: 56px !important;
+        margin-top: 5em;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">
+        @Model.power KW
+    </h1>
+</div>
+
+<div class="text-center">
+    <h2 class="display-4">
+        @Model.cost.ToString("# ##0.00") Kroner hittil i dag.
+    </h2>
+</div>
