@@ -13,7 +13,7 @@ and put it into appsettings.json
 }
 ```
 
-I have hardcoded my Net-Tarrif inside the HomeController:
+I have hardcoded my Grid Cost inside the HomeController:
 ```c#
         public IActionResult Index()
         {
@@ -22,7 +22,7 @@ I have hardcoded my Net-Tarrif inside the HomeController:
             string jsonString = System.IO.File.ReadAllText(fileName);
             PowerModel model = JsonSerializer.Deserialize<PowerModel>(jsonString);
 
-            **var gridCost = model.consumption * 0.385M;**
+            var gridCost = model.consumption * 0.385M;
             model.cost += gridCost;
             return View(model);
         }
