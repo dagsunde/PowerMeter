@@ -28,21 +28,21 @@
 <div class="text-center">
     @{
         var cls = "low";
-        if( Model.power >= 2000)
+        if (Model.power >= 2000)
         {
             cls = "medium";
-        } else if (Model.power >= 5000)
+        }
+        if (Model.power >= 5000)
         {
             cls = "high";
-
         }
 
-    
-    <h1 class="display-4 @cls">
-        @Model.power W
-    </h1>
 
+        <h1 class="display-4 @cls">
+            @Model.power W
+        </h1>
     }
+
 </div>
 
 <div class="text-center">
