@@ -28,7 +28,7 @@ namespace Power.Controllers
             string jsonString = System.IO.File.ReadAllText(fileName);
             PowerModel model = JsonSerializer.Deserialize<PowerModel>(jsonString);
 
-            var gridCost = model.consumption * 0.385M;
+            var gridCost = model.consumption * 0.3649M;
             model.cost += gridCost;
             return View(model);
         }

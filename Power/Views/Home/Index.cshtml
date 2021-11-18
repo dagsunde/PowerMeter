@@ -10,12 +10,39 @@
         font-size: 56px !important;
         margin-top: 5em;
     }
+
+    .low {
+        color: green !important;
+    }
+
+    .medium {
+        color: orange !important;
+    }
+
+    .high {
+        color: red !important;
+    }
+
 </style>
 
 <div class="text-center">
-    <h1 class="display-4">
+    @{
+        var cls = "low";
+        if( Model.power >= 2000)
+        {
+            cls = "medium";
+        } else if (Model.power >= 5000)
+        {
+            cls = "high";
+
+        }
+
+    
+    <h1 class="display-4 @cls">
         @Model.power W
     </h1>
+
+    }
 </div>
 
 <div class="text-center">
